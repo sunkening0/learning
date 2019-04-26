@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.jar.Attributes.Name;
 
 /**
- * ¶àÉú²úÕß¶àÏû·ÑÕß
+ * å¤šç”Ÿäº§è€…å¤šæ¶ˆè´¹è€…
  * 
  * @author skn
  *
@@ -34,7 +34,7 @@ public class ThreadDemo7 {
 
 class Resource2{
 	Lock lock = new ReentrantLock();
-	//Í¨¹ıÒÑÓĞµÄËø»ñÈ¡Á½×éËøÉÏµÄ¼àÊÓÆ÷¶ÔÏó
+	//é€šè¿‡å·²æœ‰çš„é”è·å–ä¸¤ç»„é”ä¸Šçš„ç›‘è§†å™¨å¯¹è±¡
 	Condition condition1 = lock.newCondition();
 	Condition condition2 = lock.newCondition();
 	
@@ -48,7 +48,7 @@ class Resource2{
 				condition1.await();				
 			}
 			items[putptr] = o;
-			System.out.println("Éú²úÕß---"+o+"------"+putptr);
+			System.out.println("ç”Ÿäº§è€…---"+o+"------"+putptr);
 			if(++putptr == items.length){
 				putptr = 0;
 			}
@@ -68,7 +68,7 @@ class Resource2{
 				condition2.wait();				
 			}
 			Object object = items[takeptr];
-			System.out.println("Ïû·ÑÕß---"+object+"---"+takeptr);
+			System.out.println("æ¶ˆè´¹è€…---"+object+"---"+takeptr);
 			if(++takeptr == items.length){
 				takeptr = 0;
 			}

@@ -1,7 +1,7 @@
 package com.skn.Learning.reflectdemo;
 
 /**
- * Éù¿¨¹¦ÄÜ
+ * å£°å¡åŠŸèƒ½
  * @author skn
  *
  */

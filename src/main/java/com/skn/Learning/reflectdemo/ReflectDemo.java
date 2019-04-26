@@ -11,7 +11,7 @@ import com.skn.Learning.threaddemo.ThreadDemo1;
 
 
 /**
- * ´´½¨·´ÉäµÄÈıÖÖ·½Ê½   Ò»°ã³£ÓÃµÚÈıÖÖ
+ * åˆ›å»ºåå°„çš„ä¸‰ç§æ–¹å¼   ä¸€èˆ¬å¸¸ç”¨ç¬¬ä¸‰ç§
  * @author skn
  *
  */
@@ -39,37 +39,37 @@ public class ReflectDemo {
 	
 	@Test
 	public void test3() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException, NoSuchFieldException {
-		//»ñÈ¡×Ö½ÚÂë¶ÔÏó
-		Class oClass1 = Class.forName("threadDemo.ThreadDemo1");//ÒªĞ´È«Â·¾¶ 
+		//è·å–å­—èŠ‚ç å¯¹è±¡
+		Class oClass1 = Class.forName("threadDemo.ThreadDemo1");//è¦å†™å…¨è·¯å¾„ 
 		Class oClass2 = Class.forName("threadDemo.ThreadDemo1");
 		
 		System.out.println(oClass1 == oClass2);
 		
-		//´´½¨ÊµÀı(ÎŞ²Î¹¹Ôìº¯Êı  ¶ÔÏó´´½¨)
+		//åˆ›å»ºå®ä¾‹(æ— å‚æ„é€ å‡½æ•°  å¯¹è±¡åˆ›å»º)
 		//ThreadDemo1 threadDemo1 = (ThreadDemo1) oClass1.newInstance();
 		//ThreadDemo1 threadDemo2 = (ThreadDemo1) oClass1.newInstance();
 		
-		//»ñÈ¡¹¹ÔìÆ÷¶ÔÏó£¨ÓÃÓÚÓĞ²Î¹¹Ôìº¯Êı¶ÔÏó´´½¨£©
+		//è·å–æ„é€ å™¨å¯¹è±¡ï¼ˆç”¨äºæœ‰å‚æ„é€ å‡½æ•°å¯¹è±¡åˆ›å»ºï¼‰
 		Constructor constructor = oClass1.getConstructor(String.class);
 		ThreadDemo1 threadDemo1 = (ThreadDemo1) constructor.newInstance("erwewrer");
 		ThreadDemo1 threadDemo2 = (ThreadDemo1) constructor.newInstance("werwe");
 		
-		//»ñÈ¡×Ö¶Î(¸Ã·½·¨Ä¬ÈÏ»ñÈ¡¹«¹²µÄ×Ö¶Îpublic  °üº¬¸¸Àà)
+		//è·å–å­—æ®µ(è¯¥æ–¹æ³•é»˜è®¤è·å–å…¬å…±çš„å­—æ®µpublic  åŒ…å«çˆ¶ç±»)
 		 //oClass1.getField("name");
 		 
-		 //»ñÈ¡±¾Àà×Ö¶Î  µ«°üº¬Ë½ÓĞ
+		 //è·å–æœ¬ç±»å­—æ®µ  ä½†åŒ…å«ç§æœ‰
 		 Field field = oClass1.getDeclaredField("name");
 		
 		
-		//¶ÔË½ÓĞ×Ö¶ÎµÄ·ÃÎÊÈ¡ÏûÈ¨ÏŞ¼ì²é(±©Á¦·ÃÎÊ)
+		//å¯¹ç§æœ‰å­—æ®µçš„è®¿é—®å–æ¶ˆæƒé™æ£€æŸ¥(æš´åŠ›è®¿é—®)
 		field.setAccessible(true);
 		String name = (String) field.get(threadDemo1);
 		System.out.println(name);
 
 		
-		//»ñÈ¡·½·¨ÁĞ±í
-//		Method[] methods = oClass1.getMethods(); //»ñÈ¡µÄ¶¼ÊÇ¹«¹²·½·¨
-//		methods = oClass1.getDeclaredMethods();//»ñÈ¡±¾ÀàÖĞ·½·¨  °üº¬Ë½ÓĞ
+		//è·å–æ–¹æ³•åˆ—è¡¨
+//		Method[] methods = oClass1.getMethods(); //è·å–çš„éƒ½æ˜¯å…¬å…±æ–¹æ³•
+//		methods = oClass1.getDeclaredMethods();//è·å–æœ¬ç±»ä¸­æ–¹æ³•  åŒ…å«ç§æœ‰
 //		for(Method method:methods){
 //			System.out.println(method.getName());
 //		}

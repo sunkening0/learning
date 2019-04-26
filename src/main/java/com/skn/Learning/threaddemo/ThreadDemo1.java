@@ -14,11 +14,11 @@ public class ThreadDemo1 extends Thread {
 	}
 	
 	public void write(){
-		System.out.println("反射测试");
+		System.out.println("鍙嶅皠娴嬭瘯");
 	}
 	
 	private void wir(String ss){
-		System.out.println("反射私有方法"+ss);
+		System.out.println("鍙嶅皠绉佹湁鏂规硶"+ss);
 	}
 	
 	public static void main(String[] args) {

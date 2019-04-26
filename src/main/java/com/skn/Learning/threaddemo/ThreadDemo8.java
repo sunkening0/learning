@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.jar.Attributes.Name;
 
 /**
- * �̳߳�
+ * 线程池
  * 
  * @author skn
  *

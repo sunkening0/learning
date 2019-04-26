@@ -2,7 +2,7 @@ package com.skn.Learning.threaddemo;
 import java.util.jar.Attributes.Name;
 
 /**
- * ¶àÉú²úÕß¶àÏû·ÑÕß
+ * å¤šç”Ÿäº§è€…å¤šæ¶ˆè´¹è€…
  * 
  * @author skn
  *
@@ -34,7 +34,7 @@ class Resource{
 	private int count = 1;
 	private boolean flag = false;
 	public synchronized void set(String name) {
-		while(flag){   //Èç¹ûÎªtrue  Ïß³ÌµÈ´ý  Êä³öÏß³Ì¿ªÊ¼¹¤×÷
+		while(flag){   //å¦‚æžœä¸ºtrue  çº¿ç¨‹ç­‰å¾…  è¾“å‡ºçº¿ç¨‹å¼€å§‹å·¥ä½œ
 			try{
 				this.wait();				
 			}catch(InterruptedException e){
@@ -43,7 +43,7 @@ class Resource{
 		}
 		this.name = name + count;
 		count++;
-		System.out.println(Thread.currentThread().getName()+"......Éú²úÕß¡£¡£¡£¡£¡£"+this.name);
+		System.out.println(Thread.currentThread().getName()+"......ç”Ÿäº§è€…ã€‚ã€‚ã€‚ã€‚ã€‚"+this.name);
 		flag = true;
 		this.notifyAll();
 	}
@@ -55,7 +55,7 @@ class Resource{
 				e.printStackTrace();
 			}
 		}
-		System.out.println(Thread.currentThread().getName()+"......Ïû·ÑÕß¡£¡£¡£¡£¡£"+this.name);
+		System.out.println(Thread.currentThread().getName()+"......æ¶ˆè´¹è€…ã€‚ã€‚ã€‚ã€‚ã€‚"+this.name);
 		flag = false;
 		this.notifyAll();
 	}
@@ -70,7 +70,7 @@ class Producer implements Runnable{
 	
 	public void run(){
 		while(true){
-			resource.set("ÌÇ´×ÅÅ¹Ç");
+			resource.set("ç³–é†‹æŽ’éª¨");
 		}
 	}
 }

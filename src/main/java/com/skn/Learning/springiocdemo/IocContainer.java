@@ -5,10 +5,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 1¡£ÊµÀı»¯bean
- * 2¡¢±£´æbean
- * 3¡¢Ìá¹©bean
- * 4¡¢Ã¿Ò»¸öbeanÒª²úÉúÓëÖ®¶ÔÓ¦µÄbeanid
+ * 1ã€‚å®ä¾‹åŒ–bean
+ * 2ã€ä¿å­˜bean
+ * 3ã€æä¾›bean
+ * 4ã€æ¯ä¸€ä¸ªbeanè¦äº§ç”Ÿä¸ä¹‹å¯¹åº”çš„beanid
  * @author skn
  *
  */
@@ -20,12 +20,12 @@ public class IocContainer {
 	}
 	
 	public void setBean(Class<?> clazz,String beanId,String... paramBeanIds){
-		//1¡¢×é×°¹¹Ôì·½·¨ËùĞèµÄ²ÎÊıÖµ
+		//1ã€ç»„è£…æ„é€ æ–¹æ³•æ‰€éœ€çš„å‚æ•°å€¼
 		Object[] paramValues = new Object[paramBeanIds.length];
 		for(int i=0;i<paramBeanIds.length;i++){
 			paramValues[i] = beans.get(paramBeanIds[i]);
 		}
-		//2¡¢µ÷ÓÃ¹¹Ôì·½·¨ÊµÀı»¯bean
+		//2ã€è°ƒç”¨æ„é€ æ–¹æ³•å®ä¾‹åŒ–bean
 		Object bean = null;
 		for(Constructor<?> constructor:clazz.getConstructors()){
 			try{
@@ -35,9 +35,9 @@ public class IocContainer {
 			}
 		}
 		if(bean == null){
-			throw new RuntimeException("ÕÒ²»µ½ºÏÊÊµÄ¹¹Ôì·½·¨È¥ÊµÀı»¯¶ÔÏó");
+			throw new RuntimeException("æ‰¾ä¸åˆ°åˆé€‚çš„æ„é€ æ–¹æ³•å»å®ä¾‹åŒ–å¯¹è±¡");
 		}
-		//3¡¢½±ÊµÀı»¯µÄbean  ·ÅÈë  beans
+		//3ã€å¥–å®ä¾‹åŒ–çš„bean  æ”¾å…¥  beans
 		beans.put(beanId, bean);
 	}
 }

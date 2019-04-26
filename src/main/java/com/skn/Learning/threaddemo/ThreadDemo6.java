@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.jar.Attributes.Name;
 
 /**
- * ¶àÉú²úÕß¶àÏû·ÑÕß    LockÓÃ·¨
+ * å¤šç”Ÿäº§è€…å¤šæ¶ˆè´¹è€…    Lockç”¨æ³•
  * 
  * @author skn
  *
@@ -37,13 +37,13 @@ class Resource1{
 	private int count = 1;
 	private boolean flag = false;
 	Lock lock = new ReentrantLock();
-	//Í¨¹ıÒÑÓĞµÄËø»ñÈ¡Á½×éËøÉÏµÄ¼àÊÓÆ÷¶ÔÏó
+	//é€šè¿‡å·²æœ‰çš„é”è·å–ä¸¤ç»„é”ä¸Šçš„ç›‘è§†å™¨å¯¹è±¡
 	Condition condition1 = lock.newCondition();
 	Condition condition2 = lock.newCondition();
 	public void set(String name) {
 		lock.lock();
 		try{
-			while(flag){   //Èç¹ûÎªtrue  Ïß³ÌµÈ´ı  Êä³öÏß³Ì¿ªÊ¼¹¤×÷
+			while(flag){   //å¦‚æœä¸ºtrue  çº¿ç¨‹ç­‰å¾…  è¾“å‡ºçº¿ç¨‹å¼€å§‹å·¥ä½œ
 				try{
 					condition1.await();				
 				}catch(InterruptedException e){
@@ -52,7 +52,7 @@ class Resource1{
 			}
 			this.name = name + count;
 			count++;
-			System.out.println(Thread.currentThread().getName()+"......Éú²úÕß¡£¡£¡£¡£¡£"+this.name);
+			System.out.println(Thread.currentThread().getName()+"......ç”Ÿäº§è€…ã€‚ã€‚ã€‚ã€‚ã€‚"+this.name);
 			flag = true;
 			condition2.signal();
 		}catch(Exception e){
@@ -72,7 +72,7 @@ class Resource1{
 					e.printStackTrace();
 				}
 			}
-			System.out.println(Thread.currentThread().getName()+"......Ïû·ÑÕß¡£¡£¡£¡£¡£"+this.name);
+			System.out.println(Thread.currentThread().getName()+"......æ¶ˆè´¹è€…ã€‚ã€‚ã€‚ã€‚ã€‚"+this.name);
 			flag = false;
 			condition1.signal();
 		}catch(Exception e){
@@ -96,7 +96,7 @@ class Producer1 implements Runnable{
 	
 	public void run(){
 		while(true){
-			resource.set("ÌÇ´×ÅÅ¹Ç");
+			resource.set("ç³–é†‹æ’éª¨");
 		}
 	}
 }

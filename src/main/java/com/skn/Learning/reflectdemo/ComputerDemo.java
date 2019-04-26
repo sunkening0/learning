@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * µçÄÔÔËĞĞ   hahaha 
+ * ç”µè„‘è¿è¡Œ   hahaha 
  * @author skn
  *
  */

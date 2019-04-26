@@ -2,8 +2,8 @@ package com.skn.Learning.threaddemo;
 import java.util.jar.Attributes.Name;
 
 /**
- * ²âÊÔthread.join() µÄÓÃ·¨
- * Ê¹ÓÃ³¡¾° £ºÁÙÊ±¼ÙÈçÒ»¸öÏß³Ì   ½«µ±Ç°µÄÏß³ÌcpuÊ¹ÓÃÈ¨ÊÍ·Å  µÈÁÙÊ±Ïß³ÌÖ´ĞĞÍêÔÙ¼ÌĞøÖ´ĞĞ
+ * æµ‹è¯•thread.join() çš„ç”¨æ³•
+ * ä½¿ç”¨åœºæ™¯ ï¼šä¸´æ—¶å‡å¦‚ä¸€ä¸ªçº¿ç¨‹   å°†å½“å‰çš„çº¿ç¨‹cpuä½¿ç”¨æƒé‡Šæ”¾  ç­‰ä¸´æ—¶çº¿ç¨‹æ‰§è¡Œå®Œå†ç»§ç»­æ‰§è¡Œ
  * 
  * @author skn
  *
@@ -46,7 +46,7 @@ class PrintChar implements Runnable {
 				e.printStackTrace();
 			}
 			for (int x = 0; x < i; x++) {
-				System.out.println(c + "----hahahhahahahha" + x + "´Î");
+				System.out.println(c + "----hahahhahahahha" + x + "æ¬¡");
 			}
 		}
 			
@@ -65,8 +65,8 @@ class PrintNum implements Runnable {
 		// TODO Auto-generated method stub
 		
 		for (int x = 0; x < i; x++) {
-			System.out.println(x + "----µÚ" + x + "´Î");
-			Thread.yield(); //ÁÙÊ±ÊÍ·Å×ÊÔ´  ±£Ö¤ÆäËûÏß³ÌÒ²ÓĞÖ´ĞĞ»ú»á
+			System.out.println(x + "----ç¬¬" + x + "æ¬¡");
+			Thread.yield(); //ä¸´æ—¶é‡Šæ”¾èµ„æº  ä¿è¯å…¶ä»–çº¿ç¨‹ä¹Ÿæœ‰æ‰§è¡Œæœºä¼š
 		}
 
 	}
