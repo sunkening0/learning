@@ -7,6 +7,15 @@ package com.skn.Learning.designpatterndemo.observer;
  * https://blog.csdn.net/lmj623565791/article/details/24179699
  *
  */
-public class Observer {
 
+/**
+ * 
+* 类名称：Observer   
+* 类描述：   所有的观察者需要实现此接口
+* 创建人：skn   
+* 创建时间：2019年9月22日 下午10:24:43   
+* @version
+ */
+public interface Observer {
+	public void update(String msg);
 }

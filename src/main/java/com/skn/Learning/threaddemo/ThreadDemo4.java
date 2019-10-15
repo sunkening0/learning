@@ -19,7 +19,7 @@ public class ThreadDemo4 {
 
 		thread1.start();
 		thread2.start();
-		//thread1.join();
+		thread1.join();
 		//thread2.setPriority(Thread.MAX_PRIORITY);
 		
 		System.out.println("3dfguttjruiyuhjdfbsdhtywertwef");
@@ -41,7 +41,7 @@ class PrintChar implements Runnable {
 		while(true){
 			try {
 				this.wait();
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

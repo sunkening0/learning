@@ -8,9 +8,10 @@ public class ThreadDemo2 implements Runnable {
 	}
 
 	public void run(){
-		for(int i=0;i<10;i++){
+		for(int i=0;i<1;i++){
 			System.out.println(name);
 		}
+		System.out.println(this);
 	}
 	
 	public static void main(String[] args) {

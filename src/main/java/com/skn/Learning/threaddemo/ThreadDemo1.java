@@ -27,5 +27,6 @@ public class ThreadDemo1 extends Thread {
 		
 		aDemo1.start();
 		aDemo2.start();
+		System.out.println(123);
 	}
 }

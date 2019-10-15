@@ -1,38 +1,31 @@
 package com.skn.Learning;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.skn.Learning.spring.Apple;
+import com.skn.Learning.spring.TestConfig;
+import com.skn.Learning.spring.test.TestService;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    @Test
+    public void getSpringBeans(){
+    	AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(TestConfig.class);
+    	String[] beannames= annotationConfigApplicationContext.getBeanDefinitionNames();
+    	System.out.println(annotationConfigApplicationContext.getBeanDefinitionCount());
+    	for(String s:beannames){
+    		System.out.println(s);
+    	}
+    	TestService testService = annotationConfigApplicationContext.getBean(TestService.class);
+    	testService.test1();
+    	
+    	/*Apple apple = annotationConfigApplicationContext.getBean(Apple.class);
+    	System.out.println(apple);*/
+    	
+    	annotationConfigApplicationContext.close();
     }
 }
