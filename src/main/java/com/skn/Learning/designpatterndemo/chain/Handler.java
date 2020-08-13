@@ -10,6 +10,7 @@ public abstract class Handler {
         this.next = handler;
     }
 
+
     // 处理请求的方法，交由子类实现
     public abstract void execute(Request request);
 
