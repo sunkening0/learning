@@ -23,12 +23,6 @@
 	
 
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
@@ -49,7 +43,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
  
         <!-- 添加Spring依赖的jar包-->
@@ -175,9 +168,15 @@
             <artifactId>commons-logging</artifactId>
             <version>${commons-logging.version}</version>
         </dependency>
-		
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
 
-	</dependencies>
+
+    </dependencies>
 	
 	<build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
