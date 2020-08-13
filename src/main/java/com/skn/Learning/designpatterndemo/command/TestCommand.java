@@ -11,7 +11,6 @@ public class TestCommand {
         // 创建命令B，交由命令执行者执行
         Command commandB = new CommandB();
         commandExecutor.execute(commandB);
-
     }
 
 }
