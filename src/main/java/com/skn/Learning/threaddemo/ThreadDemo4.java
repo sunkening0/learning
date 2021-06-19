@@ -40,7 +40,7 @@ class PrintChar implements Runnable {
 		
 		while(true){
 			try {
-				this.wait();
+				//this.wait();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
